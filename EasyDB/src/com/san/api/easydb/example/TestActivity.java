@@ -35,6 +35,7 @@ public class TestActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_test);
 		
+		//Creating connection manage , Arg1: Context , Arg2: Database name
 		manager=ConnectionManager.createConnectionManager(this, TestActivity.DATABASE);
 		
 		listView = (ListView) findViewById(R.id.listView1);
@@ -58,6 +59,7 @@ public class TestActivity extends Activity {
 	 * List box initialization.
 	 */
 	private void initList() {
+		//Opening a data base session 
 		Session session=manager.openSession();
 		/**
 		 * To get all records, only need to pass the registered entity class.

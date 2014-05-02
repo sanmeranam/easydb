@@ -6,11 +6,13 @@ import com.san.api.easydb.Entity;
 public class MyEntityClass extends Entity {
 
 	//No need of ID field. Implicitly its available.
-	
+	//Use camel case for member variables.
+	//Don't use underscore(_) in mber variable
 	private String title;
 	private String subTitle;
 	private String tag;
 	
+	//Register entity class with ConnectionManager
 	static{
 		ConnectionManager.registerEntity(MyEntityClass.class);
 	}

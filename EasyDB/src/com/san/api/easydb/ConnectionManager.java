@@ -26,11 +26,16 @@ final public class ConnectionManager {
 	}
 	
 	/**
-	 * 
+	 * Register entity class.
 	 * @param className
 	 */
 	public static void registerEntity(Class className) {
-		ENTITY_LIST.add(className);
+		if(className.getSuperclass().getName()==Entity.class.getName()){
+			if(!ENTITY_LIST.contains(className))
+				ENTITY_LIST.add(className);
+		}else{
+			System.err.print("! Invalid entity class. Entity class should subclass of com.san.api.easydb.Entity");
+		}		
 	}
 	
 	/**
